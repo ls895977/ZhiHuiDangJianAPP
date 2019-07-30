@@ -21,6 +21,8 @@ import com.lfc.zhihuidangjianapp.ui.activity.fgt.home.act.demonstration_leadersh
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.home.act.demonstration_leadership.bean.QueryDeptGroupListBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.home.act.demonstration_leadership.bean.QueryLeadDemonstrationPageListBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.home.act.demonstration_leadership.bean.queryUserListByDeptNumber;
+import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.appApiinsertTransferOrganizationalRelationsBean;
+import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.appApiqueryTransferOrganizationalRelationsDetailBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.bean.queryUserListByFirstPinYinBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.personal.act.bean.UserDataBean;
 
@@ -77,7 +79,7 @@ public class HttpHelper {
     /**
      * 获取验证码
      */
-    public static void loginCaptcha(String timeStr,final HttpUtilsCallBack<String> callBack) {
+    public static void loginCaptcha(String timeStr, final HttpUtilsCallBack<String> callBack) {
         HttpService httpService = RetrofitFactory.getRetrofit(15l, 15l).create(HttpService.class);
         HashMap<String, String> map = new HashMap<>();
         map.put("timeStr", timeStr);
@@ -450,9 +452,9 @@ public class HttpHelper {
     /**
      * 分页查询党费缴费记录信息-已缴列表
      */
-    public static void queryPartyPaymentHisPageList(int pageNum,final HttpUtilsCallBack<String> callBack) {
+    public static void queryPartyPaymentHisPageList(int pageNum, final HttpUtilsCallBack<String> callBack) {
         HashMap<String, String> map = new HashMap<>();
-        map.put("pageNum",pageNum+"");
+        map.put("pageNum", pageNum + "");
         map.put("pageSize", "10");
         HttpService httpService = RetrofitFactory.getRetrofit(15l, 15l).create(HttpService.class);
         httpService.queryPartyPaymentHisPageList(map, MyApplication.getLoginBean().getToken())
@@ -734,6 +736,89 @@ public class HttpHelper {
                     public void onNext(String succeed) {
                         Gson gson = new Gson();
                         queryUserListByDeptNumber entity = gson.fromJson(succeed, queryUserListByDeptNumber.class);
+                        if (entity.getCode() == 0) {
+                            callBack.onSucceed(succeed);
+                        } else {
+                            callBack.onError(entity.getMsg() + "");
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        callBack.onFailure(httpFailureMsg());
+                    }
+
+                    @Override
+                    public void onComplete() {
+                    }
+                });
+    }
+
+
+    /**
+     * 党员关系转移详情
+     */
+    public static void appApiqueryTransferOrganizationalRelationsDetail(final HttpUtilsCallBack<String> callBack) {
+        HashMap<String, String> map = new HashMap<>();
+        HttpService httpService = RetrofitFactory.getRetrofit(15l, 15l).create(HttpService.class);
+        httpService.appApiqueryTransferOrganizationalRelationsDetail(map, MyApplication.getLoginBean().getToken())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                    }
+
+                    @Override
+                    public void onNext(String succeed) {
+                        Gson gson = new Gson();
+                        appApiqueryTransferOrganizationalRelationsDetailBean entity = gson.fromJson(succeed, appApiqueryTransferOrganizationalRelationsDetailBean.class);
+                        if (entity.getCode() == 0) {
+                            callBack.onSucceed(succeed);
+                        } else {
+                            callBack.onError(entity.getMsg() + "");
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        callBack.onFailure(httpFailureMsg());
+                    }
+
+                    @Override
+                    public void onComplete() {
+                    }
+                });
+    }
+    /**
+     * 新增党组织关系转移信息
+     * name 名字-[必填]
+     * nowDept 现所在组织-[必填]
+     * applyDeptName 申请转入组织
+     * 转移原因-[必填]
+     * status 状态(0:待转出1:待转入2:已转出3:已转入)-[必填]
+     */
+    public static void appApiinsertTransferOrganizationalRelations(String name, String nowDept, String applyDeptName, String transferReason, final HttpUtilsCallBack<String> callBack) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("name", name);
+//        map.put("phone", phone);
+        map.put("nowDept", nowDept);
+        map.put("applyDeptName", applyDeptName);
+        map.put("transferReason", transferReason);
+        map.put("status ", "1");
+        HttpService httpService = RetrofitFactory.getRetrofit(15l, 15l).create(HttpService.class);
+        httpService.appApiinsertTransferOrganizationalRelations(map, MyApplication.getLoginBean().getToken())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                    }
+
+                    @Override
+                    public void onNext(String succeed) {
+                        Gson gson = new Gson();
+                        appApiinsertTransferOrganizationalRelationsBean entity = gson.fromJson(succeed, appApiinsertTransferOrganizationalRelationsBean.class);
                         if (entity.getCode() == 0) {
                             callBack.onSucceed(succeed);
                         } else {

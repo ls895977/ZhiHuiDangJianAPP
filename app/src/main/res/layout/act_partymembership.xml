@@ -69,6 +69,7 @@
                     android:textColor="#6A6A6A" />
 
                 <TextView
+                    android:id="@+id/name"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
@@ -91,6 +92,7 @@
                     android:textColor="#6A6A6A" />
 
                 <TextView
+                    android:id="@+id/gender"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
@@ -113,6 +115,7 @@
                     android:textColor="#6A6A6A" />
 
                 <TextView
+                    android:id="@+id/nation"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
@@ -135,6 +138,7 @@
                     android:textColor="#6A6A6A" />
 
                 <TextView
+                    android:id="@+id/birth"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
@@ -157,6 +161,7 @@
                     android:textColor="#6A6A6A" />
 
                 <TextView
+                    android:id="@+id/educational"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
@@ -179,6 +184,7 @@
                     android:textColor="#6A6A6A" />
 
                 <TextView
+                    android:id="@+id/party"
                     android:layout_width="0dip"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
@@ -200,17 +206,11 @@
                     android:layout_weight="1"
                     android:text="关系转移"
                     android:textColor="#000000" />
-
-                <EditText
-                    android:layout_width="0dip"
-                    android:layout_height="wrap_content"
+                <Spinner
+                    android:id="@+id/spinner"
                     android:layout_weight="2"
-                    android:background="@null"
-                    android:drawableRight="@mipmap/icon_right"
-                    android:hint="请填写申请转入的组织名称"
-                    android:textColor="#000"
-                    android:textColorHighlight="#BBBBBB"
-                    android:textSize="@dimen/fond_12sp" />
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"/>
             </LinearLayout>
 
             <LinearLayout
@@ -228,6 +228,7 @@
                     android:textColor="#000000" />
 
                 <EditText
+                    android:id="@+id/input_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dip_10"
@@ -239,6 +240,7 @@
     </android.support.v4.widget.NestedScrollView>
 
     <TextView
+        android:id="@+id/commit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F08713"

@@ -43,6 +43,9 @@ public class ApiConstant {
     public static final String queryUserListByDeptNumber = "appApi/queryUserListByDeptNumber";
     // 分页查询组织生活信息
     public static final String queryOrganizationalLifePageList = "appApi/queryOrganizationalLifePageList";
-
+    // 党员关系转移详情
+    public static final String appApiqueryTransferOrganizationalRelationsDetail ="appApi/queryTransferOrganizationalRelationsDetail";
+    // 新增党组织关系转移信息
+    public static final String appApiinsertTransferOrganizationalRelations ="appApi/insertTransferOrganizationalRelations";
 }
 

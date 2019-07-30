@@ -68,4 +68,10 @@ public interface HttpService {
 
     @POST(ApiConstant.queryOrganizationalLifePageList)
     Observable<String> queryOrganizationalLifePageList(@QueryMap Map<String, String> map, @Header("token") String token);
+
+    @POST(ApiConstant.appApiqueryTransferOrganizationalRelationsDetail)
+    Observable<String> appApiqueryTransferOrganizationalRelationsDetail(@QueryMap Map<String, String> map, @Header("token") String token);
+
+    @POST(ApiConstant.appApiinsertTransferOrganizationalRelations)
+    Observable<String> appApiinsertTransferOrganizationalRelations(@QueryMap Map<String, String> map, @Header("token") String token);
 }
