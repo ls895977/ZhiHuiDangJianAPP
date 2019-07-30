@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/dip_10">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:singleLine="true"
+            android:text="姓名"
+            android:textColor="#000000"
+            android:textSize="@dimen/dip_14" />
+
+        <TextView
+            android:id="@+id/zhiwu"
+            android:layout_width="0dip"
+            android:singleLine="true"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="职务"
+            android:textColor="#000000"
+            android:textSize="@dimen/dip_14" />
+
+        <TextView
+            android:id="@+id/phone"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:singleLine="true"
+            android:text="联系电话"
+            android:textColor="#000000"
+            android:textSize="@dimen/dip_14" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">中条林局智慧党建</string>
+    <string name="main_name">主界面</string>
+    <string name="AnnouncementList_name">公告公示</string>
+    <string name="Announcement_name">公告详情</string>
+    <string name="SetUpc_name">设置</string>
+    <string name="PartyBuildingMatrix_name">党建矩阵</string>
+    <string name="WebView_name">首页---banner详情</string>
+    <string name="WeeklyReport_name">工作周报</string>
+    <string name="Meeting_name">会议连线</string>
+    <string name="Emulate_name">学习强局</string>
+    <string name="Demonstration_Leadership_name">专题专栏</string>
+    <string name="Party_membershipDues_name">党费缴纳</string>
+    <string name="Mail_list_name">通讯录</string>
+    <string name="Meet_Connect">会议连线</string>
+    <string name="TitleDetails_name">条目详情</string>
+    <string name="PartyBuilding_name">党建动态</string>
+    <string name="LearningExperience_name">学习心得</string>
+    <string name="PartyBuilDingMatrixDetails_name">党建矩阵详情</string>
+    <string name="PartyMembership_name">党员关系转移</string>
+    <string name="OrganizingLife_name">组织生活</string>
+    <string name="StyleOfForestArea_name">林区风采</string>
+    <string name="DevelopingPartyMembers_name">发展党员情况</string>
+    <string name="PartyMembershipDues_name">一键代缴费</string>
+</resources>

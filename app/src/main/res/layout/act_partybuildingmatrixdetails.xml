@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.activity.fgt.home.act.Act_PartyBuildingMatrix">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/red3">
+
+        <ImageView
+            android:id="@+id/TitleDetailsBack"
+            android:layout_width="35dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="32dp"
+            android:padding="10dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/img_back" />
+
+        <TextView
+            android:id="@+id/TitleDetail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/dip_80"
+            android:layout_marginTop="36dp"
+            android:singleLine="true"
+            android:text="党建矩阵详情"
+            android:textColor="@color/white"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dip_10">
+
+                <ImageView
+                    android:layout_width="@dimen/dip_55"
+                    android:layout_height="@dimen/dip_55"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/icon_dangjian"
+                 />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/dip_10"
+                    android:text="中共山西省中条山国有林管理局委员会"
+                    android:textColor="#80000000" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dip_10"
+                android:text="支部介绍"
+                android:textColor="#000000"
+                android:textSize="@dimen/dip_16" />
+
+            <TextView
+                android:id="@+id/partybuildingmatrix_context"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dip_10"
+                android:textColor="#000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dip_10"
+                android:text="党建地图"
+                android:textColor="#000000"
+                android:textSize="@dimen/dip_16" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_loctionadd"
+                android:drawablePadding="@dimen/dip_5"
+                android:gravity="center"
+                android:padding="@dimen/dip_10"
+                android:singleLine="true"
+                android:text="山西省中条山国有林管理局析城山林场山西省大同市灵丘县5号"
+                android:textSize="@dimen/fond_12sp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dip_250"
+                android:scaleType="fitXY"
+                android:src="@mipmap/icon_testditu" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dip_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="支部成员列表"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/dip_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/dip_10"
+                    android:text="支部成员总数：XX人"
+                    android:textColor="#E24B1D"
+                    android:textSize="@dimen/dip_14" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/dip_10">
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="姓名"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/dip_14" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="职务"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/dip_14" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="联系电话"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/dip_14" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/myRecyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

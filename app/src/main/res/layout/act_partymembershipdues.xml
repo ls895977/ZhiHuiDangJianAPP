@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/red3">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="35dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="32dp"
+            android:padding="10dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/img_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="36dp"
+            android:text="缴纳党费"
+            android:textColor="@color/white"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="@dimen/dip_250"
+        android:layout_height="@dimen/dip_250"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dip_100"
+        android:src="@mipmap/icon_erweima" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/dip_20"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/pay"
+            android:layout_width="@dimen/dip_120"
+            android:layout_height="@dimen/dip_40"
+            android:background="@drawable/cashier_boder"
+            android:gravity="center"
+            android:text="支付完成"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/fond_14sp" />
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="@dimen/dip_120"
+            android:layout_height="@dimen/dip_40"
+            android:layout_marginLeft="@dimen/dip_10"
+            android:background="@drawable/cashier_boder"
+            android:gravity="center"
+            android:text="取消支付"
+            android:textColor="#B5B5B5"
+            android:textSize="@dimen/fond_14sp" />
+    </LinearLayout>
+</LinearLayout>

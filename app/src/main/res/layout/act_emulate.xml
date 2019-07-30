@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+    <include layout="@layout/incule_title"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_50"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_title1"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/dip_5"
+            android:textSize="@dimen/fond_16sp"
+            android:gravity="center"
+            android:padding="@dimen/dip_10"
+            android:text="林草大讲堂"
+            android:textColor="@drawable/signin_fond_selecte" />
+
+        <TextView
+            android:id="@+id/tv_title2"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/dip_5"
+            android:gravity="center"
+            android:padding="@dimen/dip_10"
+            android:textSize="@dimen/fond_16sp"
+            android:text="工匠培养"
+            android:textColor="@drawable/signin_fond_selecte" />
+        <TextView
+            android:id="@+id/tv_title3"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/dip_5"
+            android:gravity="center"
+            android:padding="@dimen/dip_10"
+            android:textSize="@dimen/fond_16sp"
+            android:text="学习心得"
+            android:textColor="@drawable/signin_fond_selecte" />
+    </LinearLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+</LinearLayout>
