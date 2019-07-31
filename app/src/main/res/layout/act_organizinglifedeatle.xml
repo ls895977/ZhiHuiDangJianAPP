@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/red3">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="35dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="32dp"
+            android:padding="10dp"
+            android:scaleType="fitXY"
+            android:src="@mipmap/img_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="36dp"
+            android:text="组织生活详情"
+            android:textColor="@color/white"
+            android:textSize="19dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dip_20"
+                android:layout_marginRight="@dimen/dip_20"
+                android:gravity="center"
+                android:padding="@dimen/dip_10"
+                android:text="在在在在大在"
+                android:textColor="#000000"
+                android:textSize="@dimen/fond_16sp" />
+
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="ddddddd"
+                android:textColor="@color/black4"
+                android:textSize="@dimen/fond_14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dip_10"
+                android:paddingRight="@dimen/dip_10">
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="时间"
+                    android:textColor="#000"
+                    android:textSize="@dimen/fond_14sp" />
+
+                <TextView
+                    android:id="@+id/studyDate"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="2019"
+                    android:textColor="@color/black4"
+                    android:textSize="@dimen/fond_14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:paddingTop="@dimen/dip_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dip_10"
+                android:paddingRight="@dimen/dip_10">
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="地点"
+                    android:textColor="#000"
+                    android:textSize="@dimen/fond_14sp" />
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="2019"
+                    android:textColor="@color/black4"
+                    android:textSize="@dimen/fond_14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:paddingTop="@dimen/dip_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dip_10"
+                android:paddingRight="@dimen/dip_10">
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="学习天数"
+                    android:textColor="#000"
+                    android:textSize="@dimen/fond_14sp" />
+
+                <TextView
+                    android:id="@+id/studyDays"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="2019"
+                    android:textColor="@color/black4"
+                    android:textSize="@dimen/fond_14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:paddingTop="@dimen/dip_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dip_10"
+                android:paddingRight="@dimen/dip_10">
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="主持人"
+                    android:textColor="#000"
+                    android:textSize="@dimen/fond_14sp" />
+
+                <TextView
+                    android:id="@+id/hostPerson"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="2019"
+                    android:textColor="@color/black4"
+                    android:textSize="@dimen/fond_14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:paddingTop="@dimen/dip_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dip_10"
+                android:paddingRight="@dimen/dip_10">
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="出勤"
+                    android:textColor="#000"
+                    android:textSize="@dimen/fond_14sp" />
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textColor="@color/black4"
+                    android:textSize="@dimen/fond_14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:paddingTop="@dimen/dip_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dip_10"
+                android:paddingRight="@dimen/dip_10">
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="实到人数"
+                    android:textColor="#000"
+                    android:textSize="@dimen/fond_14sp" />
+
+                <TextView
+                    android:id="@+id/partyMembershipCount"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="2019"
+                    android:textColor="@color/black4"
+                    android:textSize="@dimen/fond_14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:paddingTop="@dimen/dip_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/dip_10"
+                android:paddingRight="@dimen/dip_10">
+
+                <TextView
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="参学人员"
+                    android:textColor="#000"
+                    android:textSize="@dimen/fond_14sp" />
+
+                <TextView
+                    android:id="@+id/participants"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="2019"
+                    android:textColor="@color/black4"
+                    android:textSize="@dimen/fond_14sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:paddingLeft="@dimen/dip_10"
+                android:layout_marginTop="@dimen/dip_20"
+                android:layout_height="wrap_content"
+                android:text="集中学习研讨的专和内容"
+                android:textColor="#000"
+                android:textSize="@dimen/fond_14sp" />
+            <TextView
+                android:id="@+id/comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dip_10" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:paddingLeft="@dimen/dip_10"
+                android:layout_marginTop="@dimen/dip_20"
+                android:layout_height="wrap_content"
+                android:text="学习形式"
+                android:textColor="#000"
+                android:textSize="@dimen/fond_14sp" />
+            <TextView
+                android:id="@+id/studyForm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dip_10" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:paddingLeft="@dimen/dip_10"
+                android:layout_marginTop="@dimen/dip_20"
+                android:layout_height="wrap_content"
+                android:text="学习成果"
+                android:textColor="#000"
+                android:textSize="@dimen/fond_14sp" />
+            <TextView
+                android:id="@+id/studyResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dip_10" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

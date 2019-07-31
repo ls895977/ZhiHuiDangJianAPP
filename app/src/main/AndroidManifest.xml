@@ -135,6 +135,9 @@
         <activity android:name=".ui.activity.fgt.partyaffairs.act.Act_OrganizingLife"
             android:label="@string/OrganizingLife_name"
             />
+        <activity android:name=".ui.activity.fgt.partyaffairs.act.Act_OrganizingLifeDeatle"
+            android:label="@string/OrganizingLifeDeatle_name"
+            />
         <activity android:name=".ui.activity.fgt.partyaffairs.act.Act_StyleOfForestArea"
             android:label="@string/StyleOfForestArea_name"
             />

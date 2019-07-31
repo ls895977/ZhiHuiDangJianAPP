@@ -47,5 +47,11 @@ public class ApiConstant {
     public static final String appApiqueryTransferOrganizationalRelationsDetail ="appApi/queryTransferOrganizationalRelationsDetail";
     // 新增党组织关系转移信息
     public static final String appApiinsertTransferOrganizationalRelations ="appApi/insertTransferOrganizationalRelations";
+    // 获取筛选条件（组织生活会主题)
+    public static final String apiorglifetopic="api/org/life/topic";
+    // 分页查询组织生活
+    public static final String apiorglifepage="api/org/life/page";
+    // 查看组织生活详情信息
+    public static final String apiorglifedetail="api/org/life/detail";
 }
 

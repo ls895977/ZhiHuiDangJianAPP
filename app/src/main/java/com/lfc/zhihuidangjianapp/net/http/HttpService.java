@@ -74,4 +74,13 @@ public interface HttpService {
 
     @POST(ApiConstant.appApiinsertTransferOrganizationalRelations)
     Observable<String> appApiinsertTransferOrganizationalRelations(@QueryMap Map<String, String> map, @Header("token") String token);
+
+    @GET(ApiConstant.apiorglifetopic)
+    Observable<String> apiorglifetopic();
+
+    @GET(ApiConstant.apiorglifepage)
+    Observable<String> apiorglifepage(@QueryMap Map<String, String> map, @Header("token") String token);
+
+    @GET(ApiConstant.apiorglifedetail)
+    Observable<String> apiorglifedetail(@QueryMap Map<String, String> map, @Header("token") String token);
 }
