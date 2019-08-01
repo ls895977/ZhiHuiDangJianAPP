@@ -9,6 +9,7 @@ import com.lfc.zhihuidangjianapp.base.BaseFragment;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.home.act.Act_PartyBuilding;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.home.act.Act_PartyBuildingMatrix;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.home.act.Act_Party_membershipDues;
+import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.Act_CraftsmanTraining;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.Act_LearningExperience;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.Act_Mail_list;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.Act_Meeting;
@@ -95,7 +96,7 @@ public class Fgt_PartyAffairs extends BaseFragment implements View.OnClickListen
             case R.id.ll_lingcaogognkaike://林草公开课
                 break;
             case R.id.ll_gongjianpeiyang://工匠培养
-
+                startActivity(new Intent(getContext(), Act_CraftsmanTraining.class));
                 break;
             case R.id.ll_xuexixingde://学习心得
                 startActivity(new Intent(getContext(), Act_LearningExperience.class));

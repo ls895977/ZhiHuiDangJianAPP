@@ -83,4 +83,15 @@ public interface HttpService {
 
     @GET(ApiConstant.apiorglifedetail)
     Observable<String> apiorglifedetail(@QueryMap Map<String, String> map, @Header("token") String token);
+
+    @GET(ApiConstant.apistylepage)
+    Observable<String> apistylepage(@QueryMap Map<String, String> map, @Header("token") String token);
+
+    @GET(ApiConstant.apistyledetail)
+    Observable<String> apistyledetail(@QueryMap Map<String, String> map, @Header("token") String token);
+
+    @GET(ApiConstant.apistudycraftsmanpage)
+    Observable<String> apistudycraftsmanpage(@QueryMap Map<String, String> map, @Header("token") String token);
+    @GET(ApiConstant.apistudycraftsmandetail)
+    Observable<String> apistudycraftsmandetail(@QueryMap Map<String, String> map, @Header("token") String token);
 }

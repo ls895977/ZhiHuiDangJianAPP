@@ -20,11 +20,15 @@ import com.lfc.zhihuidangjianapp.ui.activity.fgt.home.act.demonstration_leadersh
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.home.act.demonstration_leadership.bean.QueryDeptGroupListBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.home.act.demonstration_leadership.bean.QueryLeadDemonstrationPageListBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.home.act.demonstration_leadership.bean.queryUserListByDeptNumber;
+import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.CraftsmanTrainingBean;
+import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.CraftsmanTrainingDetailsBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.apiorglifedetailBean;
+import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.apistyledetailBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.appApiinsertTransferOrganizationalRelationsBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.appApiqueryTransferOrganizationalRelationsDetailBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.dlg.bean.MuneBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.bean.OrganizingLifeBean;
+import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.bean.StyleOfForestAreaBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.bean.queryUserListByFirstPinYinBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.personal.act.bean.UserDataBean;
 import com.lfc.zhihuidangjianapp.utlis.Debug;
@@ -359,11 +363,14 @@ public class HttpHelper {
                     @Override
                     public void onNext(String succeed) {
                         Gson gson = new Gson();
-                        Party_membershipDuesBean entity = gson.fromJson(succeed, Party_membershipDuesBean.class);
-                        if (entity.getCode() == 0) {
-                            callBack.onSucceed(succeed);
-                        } else {
-                            callBack.onError(entity.getMsg() + "");
+                        try {
+                            Party_membershipDuesBean entity = gson.fromJson(succeed, Party_membershipDuesBean.class);
+                            if (entity.getCode() == 0) {
+                                callBack.onSucceed(succeed);
+                            } else {
+                                callBack.onError(entity.getMsg() + "");
+                            }
+                        } catch (Exception e) {
                         }
                     }
 
@@ -433,11 +440,14 @@ public class HttpHelper {
                     @Override
                     public void onNext(String succeed) {
                         Gson gson = new Gson();
-                        QueryUnPaidPartyPaymentHisPageListBean entity = gson.fromJson(succeed, QueryUnPaidPartyPaymentHisPageListBean.class);
-                        if (entity.getCode() == 0) {
-                            callBack.onSucceed(succeed);
-                        } else {
-                            callBack.onError(entity.getMsg() + "");
+                        try {
+                            QueryUnPaidPartyPaymentHisPageListBean entity = gson.fromJson(succeed, QueryUnPaidPartyPaymentHisPageListBean.class);
+                            if (entity.getCode() == 0) {
+                                callBack.onSucceed(succeed);
+                            } else {
+                                callBack.onError(entity.getMsg() + "");
+                            }
+                        } catch (Exception e) {
                         }
                     }
 
@@ -956,6 +966,158 @@ public class HttpHelper {
                 });
     }
 
+
+    /**
+     * 分页查询林区风采信息
+     */
+    public static void apistylepage(String pageNumber, String forestDistrictType, final HttpUtilsCallBack<String> callBack) {
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("forestDistrictType", forestDistrictType);
+        hashMap.put("pageNumber", pageNumber);
+        hashMap.put("pageSize", "10");
+        HttpService httpService = RetrofitFactory.getRetrofit(15l, 15l).create(HttpService.class);
+        httpService.apistylepage(hashMap, MyApplication.getLoginBean().getToken())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                    }
+
+                    @Override
+                    public void onNext(String succeed) {
+                        Gson gson = new Gson();
+                        StyleOfForestAreaBean entity = gson.fromJson(succeed, StyleOfForestAreaBean.class);
+                        if (entity.getCode() == 0) {
+                            callBack.onSucceed(succeed);
+                        } else {
+                            callBack.onError(entity.getMsg() + "");
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        callBack.onFailure(httpFailureMsg());
+                    }
+
+                    @Override
+                    public void onComplete() {
+                    }
+                });
+    }
+
+    /**
+     * 分页查询林区风采信息
+     */
+    public static void apistyledetail(String id, final HttpUtilsCallBack<String> callBack) {
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("id", id);
+        HttpService httpService = RetrofitFactory.getRetrofit(15l, 15l).create(HttpService.class);
+        httpService.apistyledetail(hashMap, MyApplication.getLoginBean().getToken())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                    }
+
+                    @Override
+                    public void onNext(String succeed) {
+                        Gson gson = new Gson();
+                        apistyledetailBean entity = gson.fromJson(succeed, apistyledetailBean.class);
+                        if (entity.getCode() == 0) {
+                            callBack.onSucceed(succeed);
+                        } else {
+                            callBack.onError(entity.getMsg() + "");
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        callBack.onFailure(httpFailureMsg());
+                    }
+
+                    @Override
+                    public void onComplete() {
+                    }
+                });
+    }
+
+    /**
+     * 工匠分页数据
+     */
+    public static void apistudycraftsmanpage(String pageNumber, final HttpUtilsCallBack<String> callBack) {
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("pageSize", "10");
+        hashMap.put("pageNumber", pageNumber);
+        HttpService httpService = RetrofitFactory.getRetrofit(15l, 15l).create(HttpService.class);
+        httpService.apistudycraftsmanpage(hashMap, MyApplication.getLoginBean().getToken())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                    }
+
+                    @Override
+                    public void onNext(String succeed) {
+                        Gson gson = new Gson();
+                        CraftsmanTrainingBean entity = gson.fromJson(succeed, CraftsmanTrainingBean.class);
+                        if (entity.getCode() == 0) {
+                            callBack.onSucceed(succeed);
+                        } else {
+                            callBack.onError(entity.getMsg() + "");
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        callBack.onFailure(httpFailureMsg());
+                    }
+
+                    @Override
+                    public void onComplete() {
+                    }
+                });
+    }
+
+
+    /**
+     * 工匠详情
+     */
+    public static void apistudycraftsmandetail(String id , final HttpUtilsCallBack<String> callBack) {
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("id", id );
+        HttpService httpService = RetrofitFactory.getRetrofit(15l, 15l).create(HttpService.class);
+        httpService.apistudycraftsmandetail(hashMap, MyApplication.getLoginBean().getToken())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                    }
+
+                    @Override
+                    public void onNext(String succeed) {
+                        Gson gson = new Gson();
+                        CraftsmanTrainingDetailsBean entity = gson.fromJson(succeed, CraftsmanTrainingDetailsBean.class);
+                        if (entity.getCode() == 0) {
+                            callBack.onSucceed(succeed);
+                        } else {
+                            callBack.onError(entity.getMsg() + "");
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        callBack.onFailure(httpFailureMsg());
+                    }
+
+                    @Override
+                    public void onComplete() {
+                    }
+                });
+    }
     public interface HttpUtilsCallBack<T> {
         public void onFailure(String failure);
 

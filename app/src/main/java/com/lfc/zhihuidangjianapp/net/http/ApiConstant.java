@@ -53,5 +53,13 @@ public class ApiConstant {
     public static final String apiorglifepage="api/org/life/page";
     // 查看组织生活详情信息
     public static final String apiorglifedetail="api/org/life/detail";
+    // 分页查询林区风采信息
+    public static final String apistylepage="api/style/page";
+    // 林区风采详情信息
+    public static final String apistyledetail="api/style/detail";
+    // 工匠分页数据
+    public static final String apistudycraftsmanpage="api/study/craftsman/page";
+    // 工匠详情
+    public static final String apistudycraftsmandetail="api/study/craftsman/detail";
 }
 

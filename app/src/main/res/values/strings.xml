@@ -23,4 +23,7 @@
     <string name="StyleOfForestArea_name">林区风采</string>
     <string name="DevelopingPartyMembers_name">发展党员情况</string>
     <string name="PartyMembershipDues_name">一键代缴费</string>
+    <string name="Act_StyleOfForestAreaDetails_name">林区分采详情</string>
+    <string name="CraftsmanTrainingDetails_name">工匠培养详情页</string>
+    <string name="CraftsmanTraining_name">工匠培养</string>
 </resources>

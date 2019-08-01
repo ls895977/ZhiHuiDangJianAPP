@@ -146,6 +146,15 @@
         <activity android:name=".ui.activity.fgt.home.act.Act_PartyMembershipDues"
             android:label="@string/PartyMembershipDues_name"
             />
+        <activity android:name=".ui.activity.fgt.partyaffairs.act.Act_StyleOfForestAreaDetails"
+            android:label="@string/Act_StyleOfForestAreaDetails_name"
+            />
+        <activity android:name=".ui.activity.fgt.partyaffairs.act.Act_CraftsmanTraining"
+            android:label="@string/CraftsmanTraining_name"
+            />
+        <activity android:name=".ui.activity.fgt.partyaffairs.act.Act_CraftsmanTrainingDetails"
+            android:label="@string/CraftsmanTrainingDetails_name"
+            />
     </application>
 
 </manifest>
