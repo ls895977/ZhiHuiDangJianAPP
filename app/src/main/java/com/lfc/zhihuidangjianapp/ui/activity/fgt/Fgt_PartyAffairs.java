@@ -15,6 +15,7 @@ import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.Act_Mail_list;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.Act_Meeting;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.Act_OrganizingLife;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.Act_PartyMembership;
+import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.Act_Strengthen;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.Act_StyleOfForestArea;
 
 /**
@@ -94,6 +95,7 @@ public class Fgt_PartyAffairs extends BaseFragment implements View.OnClickListen
             case R.id.ll_dangyuanshijian://党员实践
                 break;
             case R.id.ll_lingcaogognkaike://林草公开课
+                startActivity(new Intent(getContext(), Act_Strengthen.class));
                 break;
             case R.id.ll_gongjianpeiyang://工匠培养
                 startActivity(new Intent(getContext(), Act_CraftsmanTraining.class));
@@ -103,7 +105,7 @@ public class Fgt_PartyAffairs extends BaseFragment implements View.OnClickListen
                 break;
             case R.id.ll_xianjingjiceng://先进基层党
                 startActivity(new Intent(getContext(), Act_StyleOfForestArea.class));
-                break;
+            break;
             case R.id.ll_dangwugognzuo://优秀党务工作者
                 startActivity(new Intent(getContext(), Act_StyleOfForestArea.class));
                 break;

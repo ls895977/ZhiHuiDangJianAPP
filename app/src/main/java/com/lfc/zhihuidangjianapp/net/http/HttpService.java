@@ -94,4 +94,7 @@ public interface HttpService {
     Observable<String> apistudycraftsmanpage(@QueryMap Map<String, String> map, @Header("token") String token);
     @GET(ApiConstant.apistudycraftsmandetail)
     Observable<String> apistudycraftsmandetail(@QueryMap Map<String, String> map, @Header("token") String token);
+
+    @GET(ApiConstant.apistudyindex)
+    Observable<String> apistudyindex();
 }

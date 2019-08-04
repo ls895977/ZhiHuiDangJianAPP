@@ -111,10 +111,8 @@ public class Fgt_Emulate extends BaseFragment implements View.OnClickListener {
         super.onDestroyView();
         unbinder.unbind();
     }
-
     private int pageNum = 1;
     EmulateBean entity;
-
     /**
      * 分页查询学习强局
      */

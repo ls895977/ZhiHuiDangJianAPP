@@ -155,6 +155,9 @@
         <activity android:name=".ui.activity.fgt.partyaffairs.act.Act_CraftsmanTrainingDetails"
             android:label="@string/CraftsmanTrainingDetails_name"
             />
+        <activity android:name=".ui.activity.fgt.partyaffairs.act.Act_Strengthen"
+            android:label="@string/Strengthen_name"
+            />
     </application>
 
 </manifest>
