@@ -158,6 +158,9 @@
         <activity android:name=".ui.activity.fgt.partyaffairs.act.Act_Strengthen"
             android:label="@string/Strengthen_name"
             />
+        <activity android:name=".ui.activity.fgt.partyaffairs.act.Act_LectureHall"
+            android:label="@string/LectureHall_name"
+            />
     </application>
 
 </manifest>

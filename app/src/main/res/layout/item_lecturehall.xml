@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/demonstration_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/item_demonstration_img"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dip_170"
+        android:scaleType="centerCrop"
+        app:riv_corner_radius="@dimen/dip_3"
+        app:riv_mutate_background="true"
+        app:riv_oval="false" />
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dip_10"
+        android:singleLine="true"
+        android:text="支部引领丨坚持支部引领 力求担当实干 "
+        android:textColor="#000000"
+        android:textSize="@dimen/fond_16sp" />
+</LinearLayout>

@@ -6,10 +6,15 @@ import android.support.v7.widget.RecyclerView;
 import com.gyf.barlibrary.ImmersionBar;
 import com.lfc.zhihuidangjianapp.R;
 import com.lfc.zhihuidangjianapp.base.BaseActivity;
+import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.LectureHallBean;
+import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.adapter.LectureHallAdapter;
 import com.scwang.smartrefresh.header.MaterialHeader;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.constant.SpinnerStyle;
 import com.scwang.smartrefresh.layout.footer.BallPulseFooter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -58,9 +63,14 @@ public class Act_LectureHall extends BaseActivity {
         });
         myRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
-
+    List<LectureHallBean> data =new ArrayList<>();
     @Override
     protected void initData() {
+        for (int i=0;i<10;i++){
+            data.add(new LectureHallBean());
+        }
+        LectureHallAdapter adapter=new LectureHallAdapter(data);
+        myRecyclerView.setAdapter(adapter);
 
     }
 
