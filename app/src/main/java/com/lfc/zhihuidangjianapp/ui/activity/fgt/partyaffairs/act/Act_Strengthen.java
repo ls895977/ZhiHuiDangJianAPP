@@ -12,6 +12,7 @@ import com.gyf.barlibrary.ImmersionBar;
 import com.hjq.toast.ToastUtils;
 import com.lfc.zhihuidangjianapp.R;
 import com.lfc.zhihuidangjianapp.base.BaseActivity;
+import com.lfc.zhihuidangjianapp.base.GlideImageLoader;
 import com.lfc.zhihuidangjianapp.net.http.HttpHelper;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.StrengthenBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.adapter.GongJIangAdapter;
@@ -35,7 +36,6 @@ public class Act_Strengthen extends BaseActivity {
     RecyclerView gongjiangRecyclerView;
     @BindView(R.id.xuexingde_RecyclerView)
     RecyclerView xuexingde_RecyclerView;
-
     @Override
     protected int getLayoutId() {
         return R.layout.act_strengthen;
@@ -80,14 +80,12 @@ public class Act_Strengthen extends BaseActivity {
                 Gson gson = new Gson();
                 StrengthenBean entity = gson.fromJson(succeed, StrengthenBean.class);
                 if (entity.getCode() == 0) {
-//                    for (int i=0;i<entity.getData().getOpenClass(),i++){
-//
-//                    }
-//                    //设置图片加载器
-//                    imgBanner.setImageLoader(new GlideImageLoader());
-//                    imgBanner.setImages(image).start();
-//                    imgBanner.setOnBannerListener(position -> {
-//                    });
+                    image.add(entity.getData().getOpenClass().getAttachmentUrl());
+                    //设置图片加载器
+                    imgBanner.setImageLoader(new GlideImageLoader());
+                    imgBanner.setImages(image).start();
+                    imgBanner.setOnBannerListener(position -> {
+                    });
                     GongJIangAdapter adapter = new GongJIangAdapter(entity.getData().getCraftsman());
                     gongjiangRecyclerView.setAdapter(adapter);
                     XinDeAdapter adapter1 = new XinDeAdapter(entity.getData().getStudy());
@@ -121,9 +119,10 @@ public class Act_Strengthen extends BaseActivity {
                 startActivity(new Intent(getContext(),Act_LectureHall.class));
                 break;
             case R.id.bt_gongjiangpeiyang:
-
+                startActivity(new Intent(getContext(), Act_CraftsmanTraining.class));
                 break;
             case R.id.bt_xuexixingde:
+
                 break;
         }
     }

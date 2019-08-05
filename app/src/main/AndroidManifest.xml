@@ -161,6 +161,9 @@
         <activity android:name=".ui.activity.fgt.partyaffairs.act.Act_LectureHall"
             android:label="@string/LectureHall_name"
             />
+        <activity android:name=".ui.activity.fgt.partyaffairs.act.Act_LectureDetails"
+            android:label="@string/LectureDetails_name"
+            />
     </application>
 
 </manifest>

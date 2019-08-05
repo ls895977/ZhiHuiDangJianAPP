@@ -22,8 +22,10 @@ import com.lfc.zhihuidangjianapp.ui.activity.fgt.home.act.demonstration_leadersh
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.home.act.demonstration_leadership.bean.queryUserListByDeptNumber;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.CraftsmanTrainingBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.CraftsmanTrainingDetailsBean;
+import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.LectureHallBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.StrengthenBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.apiorglifedetailBean;
+import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.apistudyopenClassdetailBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.apistyledetailBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.appApiinsertTransferOrganizationalRelationsBean;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.bean.appApiqueryTransferOrganizationalRelationsDetailBean;
@@ -1137,6 +1139,78 @@ public class HttpHelper {
                     public void onNext(String succeed) {
                         Gson gson = new Gson();
                         StrengthenBean entity = gson.fromJson(succeed, StrengthenBean.class);
+                        if (entity.getCode() == 0) {
+                            callBack.onSucceed(succeed);
+                        } else {
+                            callBack.onError(entity.getMsg() + "");
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        callBack.onFailure(httpFailureMsg());
+                    }
+
+                    @Override
+                    public void onComplete() {
+                    }
+                });
+    }
+    /**
+     * 大讲堂分页数据
+     */
+    public static void apistudyopenClasspage(String pageNumber , final HttpUtilsCallBack<String> callBack) {
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("pageSize", "10" );
+        hashMap.put("pageNumber", pageNumber );
+        HttpService httpService = RetrofitFactory.getRetrofit(15l, 15l).create(HttpService.class);
+        httpService.apistudyopenClasspage(hashMap)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                    }
+                    @Override
+                    public void onNext(String succeed) {
+                        Gson gson = new Gson();
+                        LectureHallBean entity = gson.fromJson(succeed, LectureHallBean.class);
+                        if (entity.getCode() == 0) {
+                            callBack.onSucceed(succeed);
+                        } else {
+                            callBack.onError(entity.getMsg() + "");
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Debug.e("----------onError=="+e.getMessage());
+                        callBack.onFailure(httpFailureMsg());
+                    }
+
+                    @Override
+                    public void onComplete() {
+                    }
+                });
+    }
+    /**
+     * 大讲堂详情
+     */
+    public static void apistudyopenClassdetail(String id , final HttpUtilsCallBack<String> callBack) {
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("id", id );
+        HttpService httpService = RetrofitFactory.getRetrofit(15l, 15l).create(HttpService.class);
+        httpService.apistudyopenClassdetail(hashMap)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                    }
+                    @Override
+                    public void onNext(String succeed) {
+                        Gson gson = new Gson();
+                        apistudyopenClassdetailBean entity = gson.fromJson(succeed, apistudyopenClassdetailBean.class);
                         if (entity.getCode() == 0) {
                             callBack.onSucceed(succeed);
                         } else {

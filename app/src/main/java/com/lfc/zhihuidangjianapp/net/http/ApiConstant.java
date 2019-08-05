@@ -63,7 +63,9 @@ public class ApiConstant {
     public static final String apistudycraftsmandetail="api/study/craftsman/detail";
     // 学习强局首页
     public static final String apistudyindex="api/study/index";
-    // 学习强局首页
-//    public static final String apistudyindex="api/study/index";
+    // 大讲堂分页数据
+    public static final String apistudyopenClasspage="api/study/openClass/page";
+    //大讲堂详情
+    public static final String apistudyopenClassdetail="api/study/openClass/detail";
 }
 

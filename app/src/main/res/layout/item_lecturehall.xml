@@ -5,15 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
-
-    <com.makeramen.roundedimageview.RoundedImageView
-        android:id="@+id/item_demonstration_img"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dip_170"
-        android:scaleType="centerCrop"
-        app:riv_corner_radius="@dimen/dip_3"
-        app:riv_mutate_background="true"
-        app:riv_oval="false" />
+        android:layout_height="match_parent">
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/item_demonstration_img"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dip_170"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon_test2"
+            app:riv_corner_radius="@dimen/dip_3"
+            app:riv_mutate_background="true"
+            app:riv_oval="false" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/icon_shipingbofang" />
+    </RelativeLayout>
+
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
