@@ -1229,6 +1229,42 @@ public class HttpHelper {
                 });
     }
 
+    /**
+     * 学习心得保存=>ifPass // 1正式 2草稿
+     */
+    public static void apistudystudydetail(String id , final HttpUtilsCallBack<String> callBack) {
+        HashMap<String, String> hashMap = new HashMap<>();
+        hashMap.put("id", id );
+        HttpService httpService = RetrofitFactory.getRetrofit(15l, 15l).create(HttpService.class);
+        httpService.apistudystudydetail(hashMap,MyApplication.getLoginBean().getToken())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<String>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                    }
+                    @Override
+                    public void onNext(String succeed) {
+                        Gson gson = new Gson();
+                        apistudyopenClassdetailBean entity = gson.fromJson(succeed, apistudyopenClassdetailBean.class);
+                        if (entity.getCode() == 0) {
+                            callBack.onSucceed(succeed);
+                        } else {
+                            callBack.onError(entity.getMsg() + "");
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        callBack.onFailure(httpFailureMsg());
+                    }
+
+                    @Override
+                    public void onComplete() {
+                    }
+                });
+    }
+
     public interface HttpUtilsCallBack<T> {
         public void onFailure(String failure);
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dip_10"
+    android:orientation="vertical"
+    android:padding="@dimen/dip_10">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLength="18"
+            android:text="支部引领丨坚持支部引领 力求担当实干 "
+            android:textColor="#000"
+            android:textSize="@dimen/fond_14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:maxLength="18"
+            android:text="2019.5.8"
+            android:textColor="#000"
+            android:textSize="@dimen/fond_14sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:paddingTop="@dimen/dip_5"
+        android:text="深化“一带一路”研究，要坚持登高望远、树深化“一带一路”研究，要坚持登高望
+远、树深化“一带一路”研究，要坚持登高望远、树深化“一带一路”研究"
+        android:textColor="#737373"
+        android:textSize="@dimen/fond_14sp" />
+</LinearLayout>

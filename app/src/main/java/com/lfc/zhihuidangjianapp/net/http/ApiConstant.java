@@ -67,5 +67,7 @@ public class ApiConstant {
     public static final String apistudyopenClasspage="api/study/openClass/page";
     //大讲堂详情
     public static final String apistudyopenClassdetail="api/study/openClass/detail";
+    //学习心得保存=>ifPass // 1正式 2草稿
+    public static final String apistudystudydetail="api/study/study/detail";
 }
 

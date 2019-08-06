@@ -1,4 +1,5 @@
 package com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act;
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 import com.lfc.zhihuidangjianapp.R;
 import com.lfc.zhihuidangjianapp.base.BaseActivity;
 import com.lfc.zhihuidangjianapp.ui.activity.fgt.home.act.demonstration_leadership.fgt.Fgt_LearningExperience;
+import com.lfc.zhihuidangjianapp.ui.activity.fgt.partyaffairs.act.dlg.Dilog_Xinde;
 
 import java.util.ArrayList;
 /**
@@ -16,6 +18,7 @@ import java.util.ArrayList;
 public class Act_LearningExperience extends BaseActivity implements View.OnClickListener {
 
     private TextView title[] = new TextView[4];
+    private Dilog_Xinde dilog_xinde;
     @Override
     protected int getLayoutId() {
         return R.layout.act_learningexperience;
@@ -36,6 +39,18 @@ public class Act_LearningExperience extends BaseActivity implements View.OnClick
         title[1].setOnClickListener(this);
         title[2].setOnClickListener(this);
         title[3].setOnClickListener(this);
+        findViewById(R.id.item_show).setOnClickListener(this);
+        dilog_xinde=new Dilog_Xinde(Act_LearningExperience.this,new Dilog_Xinde.OnBackCenter(){
+            @Override
+            public void onNewXingDe() {//新增学习心得
+                startActivity(new Intent(getContext(),Act_WritingExperience.class));
+            }
+
+            @Override
+            public void onXingDeCaoGao() {//草稿箱
+                startActivity(new Intent(getContext(),Act_Drafts.class));
+            }
+        });
     }
     MyPagerAdapter mAdapter;
     ViewPager vp;
@@ -90,6 +105,9 @@ public class Act_LearningExperience extends BaseActivity implements View.OnClick
             case R.id.tv_title4:
                 swiche(3);
                 vp.setCurrentItem(3);
+                break;
+            case R.id.item_show://弹框
+                dilog_xinde.show();
                 break;
         }
     }
