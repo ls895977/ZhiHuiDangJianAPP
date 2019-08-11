@@ -1228,13 +1228,10 @@ public class HttpHelper {
                     }
                 });
     }
-
     /**
      * 学习心得保存=>ifPass // 1正式 2草稿
      */
-    public static void apistudystudydetail(String id , final HttpUtilsCallBack<String> callBack) {
-        HashMap<String, String> hashMap = new HashMap<>();
-        hashMap.put("id", id );
+    public static void apistudystudydetail(HashMap<String, String> hashMap  , final HttpUtilsCallBack<String> callBack) {
         HttpService httpService = RetrofitFactory.getRetrofit(15l, 15l).create(HttpService.class);
         httpService.apistudystudydetail(hashMap,MyApplication.getLoginBean().getToken())
                 .subscribeOn(Schedulers.io())
@@ -1245,13 +1242,14 @@ public class HttpHelper {
                     }
                     @Override
                     public void onNext(String succeed) {
+                        Debug.e("-----------上传=="+succeed);
                         Gson gson = new Gson();
-                        apistudyopenClassdetailBean entity = gson.fromJson(succeed, apistudyopenClassdetailBean.class);
-                        if (entity.getCode() == 0) {
-                            callBack.onSucceed(succeed);
-                        } else {
-                            callBack.onError(entity.getMsg() + "");
-                        }
+//                        apistudyopenClassdetailBean entity = gson.fromJson(succeed, apistudyopenClassdetailBean.class);
+//                        if (entity.getCode() == 0) {
+//                            callBack.onSucceed(succeed);
+//                        } else {
+//                            callBack.onError(entity.getMsg() + "");
+//                        }
                     }
 
                     @Override
